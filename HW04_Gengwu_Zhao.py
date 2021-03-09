@@ -35,6 +35,6 @@ def main():
     User1=gituser("gzhao9")
     User1.Print_info()
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+    #main()
     
