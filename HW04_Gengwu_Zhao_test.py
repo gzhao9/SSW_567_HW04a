@@ -1,9 +1,12 @@
 import unittest
+from unittest.mock import MagicMock,patch
 from HW04_Gengwu_Zhao import *
 class TestHW04(unittest.TestCase):
-    def test_repo(self):
+    @patch("HW04_Gengwu_Zhao.gituser")
+    def test_repo(self,Mocktest):
+        Mocktest.return_value.json.return_value = ('gzhao9')
         User1=gituser("gzhao9")
-
+    
         self.assertTrue('SSW_555_B'in User1.get_repo_list())
         self.assertTrue('SSW_567'in User1.get_repo_list())
         self.assertTrue('Student-Repository'in User1.get_repo_list())
